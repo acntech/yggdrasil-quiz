@@ -27,9 +27,9 @@ angular.module('yggdrasilQuizApp')
       });
 
       if (allCorrect) {
-        $location.path('/success');
+        $location.path('success');
       } else {
-        $location.path('/sorry');
+        $location.path('sorry');
       }
     };
   });

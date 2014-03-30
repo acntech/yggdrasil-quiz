@@ -23,6 +23,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     color: $whitish;
+    min-height: 100vh;
 }
 
 .well {
@@ -95,6 +96,14 @@ label.alternative {
 
 a.btn {
     margin-top: 15px;
+}
+
+.success {
+    text-align: center;
+
+    h1 {
+        font-size: 24px;
+    }
 }
 
 /* Responsive: Portrait tablets and up */

@@ -1,21 +1,20 @@
-<div ng-include="'partials/navbar'"></div>
-
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1>Yggdrasil quiz</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    &gt; By Accenture user experience.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
 
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
+<form name="quizForm" novalidate class="well">
+
+  <div ng-repeat="(index, question) in questions">
+      <h4>{{ index + 1 }}. {{question.question}}</h4>
+      <label class="question" ng-repeat="alternative in question.alternatives">
+        <input type="radio" ng-model="question.alternative" value="{{ alternative }}">
+        {{ alternative.text }}
+      </label>
   </div>
-</div>
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+  <p><a class="btn btn-success" ng-disabled="!formCompleted()" ng-click="submit()">Submit!</a></p>
+
+</form>

@@ -1,20 +1,18 @@
 <div class="jumbotron">
-  <h1>Yggdrasil quiz</h1>
-  <p class="lead">
-    &gt; By Accenture user experience.
-  </p>
+  <img src="images/tickbox-with-bg.svg" alt="tickbox">
+  <h1>Test Your Knowledge - <span class="quiz">Usability Quiz</span></h1>
 </div>
 
 <form name="quizForm" novalidate class="well">
 
-  <div ng-repeat="(index, question) in questions">
-      <h4>{{ index + 1 }}. {{question.question}}</h4>
-      <label class="question" ng-repeat="alternative in question.alternatives">
+  <div ng-class="{ first: index == 0 }" ng-repeat="(index, question) in questions">
+      <h4 class="question">{{ index + 1 }}. {{question.question}}</h4>
+      <label class="alternative" ng-repeat="alternative in question.alternatives">
         <input type="radio" ng-model="question.alternative" value="{{ alternative }}">
         {{ alternative.text }}
       </label>
   </div>
 
-  <p><a class="btn btn-success" ng-disabled="!formCompleted()" ng-click="submit()">Submit!</a></p>
+  <p><a class="btn btn-success" ng-disabled="!formCompleted()" ng-click="submit()">Submit answers!</a></p>
 
 </form>

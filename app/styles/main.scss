@@ -2,8 +2,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
-$green: #00949d;
-$whitish: #fefefe;
+$green: #15929b;
+$whitish: #ffffff;
 $blackish: #010101;
 
 .browsehappy {
@@ -18,7 +18,17 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: $green;
-    color: $blackish;
+    background-image: url('../images/background.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: $whitish;
+}
+
+.well {
+    background-color: rgba(0, 0, 0, .3);
+    border: none;
+    border-radius: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -29,27 +39,34 @@ body {
     padding-right: 15px;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
 .container-narrow > hr {
     margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    color: $blackish;
+    color: $whitish;
+    background-color: rgba(0, 0, 0, .3);
+
+    h1 {
+        display: inline;
+        font-size: 36px;
+        vertical-align: middle;
+        margin-left: 10px;
+        .quiz {
+            font-weight: bold;
+        }
+    }
 }
 
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+}
+
+.container .jumbotron {
+    padding: 25px;
+    border-radius: 20px;
 }
 
 /* Supporting marketing content */
@@ -61,9 +78,16 @@ body {
     margin-top: 28px;
 }
 
-.question {
+h4.question {
+    margin-top: 24px;
+}
+div.first h4.question {
+    margin-top: 0;
+}
+label.alternative {
     display: block;
-    margin-left: 15px;
+    font-weight: normal;
+
     input {
         margin-right: 5px;
     }
@@ -76,7 +100,7 @@ a.btn {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        width: inherit;
     }
 
     /* Remove the padding we set earlier */
